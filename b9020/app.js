@@ -32,6 +32,7 @@ for (let i = 1 ; i <= T; i++) {
 
         for (let i = 0; primeArray[i] < n / 2 + 1; i++) { // 주어진 수의 절반보다 작은 소수만 탐색
             const index = primeArray.indexOf(n - primeArray[i]); // (주어진 수 - 소수)가 소수인지
+            // indexOf() 메서드는 배열에서 지정된 요소를 찾을 수 있는 첫 번째 인덱스를 반환하고 없으면 -1 반환한다.
             if(index !== -1) { // 소수라면 ?
                 answer.push([primeArray[i], primeArray[index]]); // 골드바흐 파티션이므로 배열에 추가
             }

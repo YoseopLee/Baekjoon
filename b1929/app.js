@@ -7,7 +7,7 @@ const M = Number(input[1]);
 solution(N, M);
 
 function solution() {
-    let primeArray = Array(M + 1).fill(true); // 0부터 M까지 true로 채운 배열 선언
+    let primeArray = Array(M + 1).fill(true); // 0부터 M + 1개의 true로 채운 배열 선언
     primeArray[0] = primeArray[1] = false;  // 0, 1은 소수가 아님.
     
     for (let i = 2; i <= Math.ceil(Math.sqrt(M)); i++) {

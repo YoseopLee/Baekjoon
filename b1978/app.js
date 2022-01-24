@@ -21,12 +21,15 @@ function solution(N) { // N 은 4
     };
 
     const nums = input[0].split(' ').map(n => Number(n)); // [1,3,5,7] 숫자 배열로 만들어줌
+    const primeArray = [];
     let count = 0; // 소수의 갯수를 나타내는 변수 선언
     for (let i = 0; i < N; i++) { // 주어진 테스트케이스 갯수만큼 반복
         if(isPrime(nums[i])) { // 만약 nums가 반복되면서 소수가 있으면 count 변수에 +1 씩 해줌.
             count += 1;
+            primeArray.push(nums[i]);
         }
     }
     
-    console.log(count); // 최종적으로 count 찍어냄.
+    console.log(count);
+    console.log(primeArray);
 }
