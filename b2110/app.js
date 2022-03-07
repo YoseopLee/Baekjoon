@@ -1,8 +1,8 @@
 const filePath = process.platform === 'linux' ? 'dev/stdin' : './input.txt';
-const input = require('fs').readFileSync(filePath).toString().trim().split('\n');
+const input = require('fs').readFileSync(filePath).toString().split('\n');
 
 const [N, C] = input.shift().split(' ').map(v=>+v);
-const inputs = input.map(v=>+v).sort((a,b) => a-b);
+const inputs = input.map(v=>+v).sort((a,b) =>  a-b);
 
 let start = 1;
 let end = inputs[inputs.length - 1] - inputs[0];
