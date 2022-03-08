@@ -22,13 +22,19 @@ for (let i = 0; i < inputArray.length; i++) {
     }
 }
 
+
 // 산술 평균 구하는 함수
 function getAvg(array) {
     let sum = 0;
     for (let i = 0; i < N; i++) {
         sum += array[i];
     }
-    return Math.round(sum / N);
+    if (sum / N < 0) {
+        return Math.round(sum / N * -100 / 100) ;
+    } else {
+        return Math.round(sum / N);
+    }
+    
 }
 
 // 중앙값 구하는 함수
