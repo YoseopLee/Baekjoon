@@ -3,9 +3,9 @@ const input = require('fs').readFileSync(filePath).toString().trim().split('\n')
 const N = +input.shift();
 const inputs = input.map(v=>+v);
 const dp = new Array(N).fill(0);
-dp[0] = inputs[0]; // 20;
+dp[0] = inputs[0];
 dp[1] = Math.max(inputs[0] + inputs[1], inputs[1]);
-dp[2] = Math.max(inputs[0] + inputs[2], inputs[1] + inputs[2]);
+dp[2] = Math.max(dp[1] + inputs[2], dp[1] + inputs[3]);
 for (let i = 3; i < N; i++) {
     dp[i] = Math.max(inputs[i] + inputs[i - 1] + dp[i - 3], inputs[i] + dp[i - 2]);
 }
