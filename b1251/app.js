@@ -16,4 +16,6 @@ for (let i = 0; i < input.length - 1; i++) {
 for (a of tmp) {
     answer.push(a);
 }
+console.log(answer);
+console.log(answer.sort());
 console.log(answer.sort()[0]);
