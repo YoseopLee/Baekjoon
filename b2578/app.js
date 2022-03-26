@@ -10,7 +10,7 @@ for (let i = 5; i < 10; i++) {
     mc.push(input[i].split(' ').map(v=>+v));
 }
 
-const isBingo = () => {
+const isBingo = (arr) => {
     for (let i = 0; i < 5; i++) {
         
     }

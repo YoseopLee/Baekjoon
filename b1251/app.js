@@ -1,21 +1,13 @@
 const filePath = process.platform === 'linux' ? 'dev/stdin' : './input.txt';
-const input = require('fs').readFileSync(filePath).toString().split('');
-let tmp = [];
-let a;
-let b;
-let c;
+const input = require('fs').readFileSync(filePath).toString().trim().split('');
 let answer = [];
-for (let i = 0; i < input.length - 1; i++) {
-    for (let j = i + 1; j < input.length; j++) {
-        a = input.slice(0,i).reverse().join('');
-        b = input.slice(i,j).reverse().join('');
-        c = input.slice(j).reverse().join('');
-        tmp.push(a + b + c);
+for (let i = 0; i < input.length - 2; i++) {
+    for (let j = i + 1; j < input.length - 1; j++) {
+        for (let k = j + 1; k < input.length; k++) {
+            tmp = input.slice(0,j).reverse().join('') + input.slice(j, k).reverse().join('') + input.slice(k).reverse().join('');
+            answer.push(tmp);
+        }
     }
 }
-for (a of tmp) {
-    answer.push(a);
-}
-console.log(answer);
-console.log(answer.sort());
-console.log(answer.sort()[0]);
+answer.sort();
+console.log(answer[0]);
